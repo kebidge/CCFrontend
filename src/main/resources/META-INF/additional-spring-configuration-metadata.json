@@ -1,0 +1,5 @@
+{"properties": [{
+  "name": "user.endpoint",
+  "type": "java.lang.String",
+  "description": "Backend adress endpoint to get users names"
+}]}

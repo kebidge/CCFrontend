@@ -1,0 +1,58 @@
+<!DOCTYPE HTML>
+ 
+<html xmlns:th="http://www.thymeleaf.org">
+    <head>
+        <title>CloudComputing Project</title>
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    </head>
+ 
+    <link rel="stylesheet" href="cc-frontend-style.css"/>
+ 
+    <body>
+
+        <div>
+            <h1>CloudComputing Project</h1>
+            <h2 style="text-align:center">Fidel & Kevin</h2>
+            <h2 style="text-align:center">2022</h2>
+            <br>
+            <p style="text-align:center">Welcome to our CloudComputing project webpage! Please enter your name to eternalize your name on our project site...</p>
+            <br>
+            <form method="POST" th:action="@{/}">
+                <label for="newuser">Who are you?</label>
+                <input type="text" name="newuser" th:value="${newuser}" placeholder="Please enter your name here..." />
+                <input type="submit" value="Add your name!">
+            </form>
+        </div>
+
+        <div>
+            <br><h1>Eternal Wall</h1><br>
+        </div>
+
+        <div th:unless="${#lists.isEmpty(users)}">   
+            <table>
+                <tr>
+                    <th>ID</th>
+                    <th>NAME</th>
+                </tr>
+                <tr th:each="user : ${users}">
+                    <td th:text="${user.id}"/>            
+                    <td th:text="${user.username}"/>
+                </tr>
+            </table>
+        </div>
+
+        <div th:if="${#lists.isEmpty(users)}">
+            <table>
+                <tr>
+                    <th>ID</th>
+                    <th>NAME</th>
+                </tr>
+                <tr>
+                    <td>#</td>
+                    <td>...your name could be here!</td>
+                </tr>
+            </table>
+        </div>
+ 
+    </body>
+</html>
