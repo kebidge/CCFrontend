@@ -126,3 +126,24 @@ jobs:
           file: ./Dockerfile
           push: true
           tags: ${{ secrets.DOCKER_HUB_USERNAME }}/${{ env.DEPLOYMENT_NAME }}:${{ env.TAG }}
+  
+  # This is the fourth job of the workflow called "trigger"
+  trigger: 
+  
+    name: Trigger CCBackend Pipeline
+    runs-on: ubuntu-latest
+    needs: [image]
+
+    steps:
+
+      - name: Trigger Backend
+        uses: convictional/trigger-workflow-and-wait@v1.3.0
+        with:
+          owner: kebidge
+          repo: CCBackend
+          github_token: ${{ secrets.CCBACKEND_ACCESS_TOKEN }}
+          workflow_file_name: cc-backend-pipeline.yml
+
+      - name: Bckend Pipeline done
+        run: |
+          echo "done"
