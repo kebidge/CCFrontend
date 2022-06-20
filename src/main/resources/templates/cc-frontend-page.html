@@ -25,7 +25,7 @@
         <div class="container">
             <div class="row">
                 <div class="col mt-5 mb-3">
-                    <h1 class="text-center">Titel</h1>
+                    <h1 class="text-center">HFT Stuttgart</h1>
                     <h3 class="text-center">Kevin &amp; Fidel</h3>
                     <p class="text-center my-4">Welcome to our Cloud Computing project webpage! Please enter your name to eternalize your name on our project site...</p>
 
@@ -33,7 +33,7 @@
                         <form method="POST" th:action="@{/}">
                             <div class="mb-3">
                                 <label for="newuser" class="form-label">Who are you?</label>
-                                <input type="text" name="newuser" id="newuser" class="form-control" th:value="${newuser}" placeholder="Please enter your name here..." />
+                                <input type="text" name="newuser" id="newuser" class="form-control" th:value="${newuser}" placeholder="Please enter your name here..." required/>
                             </div>
                             <div class="mb-3">
                                 <input type="submit" class="btn btn-outline-info" value="Add your name!">
