@@ -25,18 +25,18 @@
         <div class="container">
             <div class="row">
                 <div class="col mt-5 mb-3">
-                    <h1 class="text-center">GMS</h1>
-                    <h3 class="text-center">Kevin</h3>
+                    <h1 class="text-center">Schickhardt GMS</h1>
+                    <h3 class="text-center">25.11.2022</h3>
                     <p class="text-center my-4">Welcome...</p>
 
                     <div class="mt-5" style="max-width: 55rem; margin: auto;">
                         <form method="POST" th:action="@{/}">
                             <div class="mb-3">
-                                <label for="newuser" class="form-label">Who are you?</label>
-                                <input type="text" name="newuser" id="newuser" class="form-control" th:value="${newuser}" placeholder="Please enter your name here..." required/>
+                                <label for="newuser" class="form-label">Du hast eine Frage?</label>
+                                <input type="text" name="newuser" id="newuser" class="form-control" th:value="${newuser}" placeholder="Please enter your question here..." required/>
                             </div>
                             <div class="mb-3">
-                                <input type="submit" class="btn btn-outline-info" value="Add your name!">
+                                <input type="submit" class="btn btn-outline-info" value="Add">
                             </div>
                         </form>
                     </div>
@@ -62,7 +62,7 @@
                             </tr>
                             <tr>
                                 <td>#</td>
-                                <td>...your name could be here!</td>
+                                <td>...your question could be here!</td>
                             </tr>
                         </table>
                     </div>
